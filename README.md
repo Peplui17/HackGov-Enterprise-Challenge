@@ -1,56 +1,39 @@
-# 🏛️ HackGov - Plataforma Analítica e Preditiva para Gestão Pública
+# 🏛️ HackGov — Painel de Gestão Urbana e Relatórios de Zeladoria
 
-> **Enterprise Challenge - Fase 4 (Entrega Final do Produto)**  
-> **Autor / Aluno:** Luiz Otávio Villas Bôas Ramos Tondin Fontes (RM: 561537)  
-> **Apresentação em Vídeo:** [Assista no YouTube](https://youtu.be/6Qb4tDQavSY)  
-> **Repositório Oficial:** [github.com/Peplui17/HackGov](https://github.com/Peplui17/HackGov)
+[![Status do Projeto](https://img.shields.io/badge/status-em%20desenvolvimento-green.svg)]()
+[![Tecnologias](https://img.shields.io/badge/stack-Java%20|%20Python%20|%20Oracle%20|%20FastAPI-blue)]()
 
----
-
-## 📌 Visão Geral do Produto
-
-O **HackGov** é uma solução de gestão pública que evoluiu de um sistema reativo de registros de ocorrências para uma **plataforma analítica e preditiva**. 
-
-A solução integra os dados operacionais das solicitações dos cidadãos aos órgãos municipais, utilizando **Estatística Descritiva**, **Machine Learning** e **Processamento de Linguagem Natural (PLN)**. Com isso, permite que os gestores públicos monitorem prazos de atendimento (SLA), identifiquem gargalos crônicos em bairros específicos, prevejam quebras de prazo e realizem a triagem automática de chamados.
+Sistema integrado de gestão urbana desenvolvido para otimizar o atendimento de chamados de zeladoria (como buracos na via, iluminação pública e poda de árvores). A plataforma combina um **Backend em Java (Spring Boot)** para transações e segurança, um **Microsserviço de IA e Estatística em Python (FastAPI)** para análises preditivas e cálculo de SLAs, e uma interface web moderna.
 
 ---
 
-## 🏛️ Esquema de Dados (Oracle Database)
+## 🚀 Arquitetura do Sistema
 
-O modelo relacional da aplicação é composto por 7 tabelas operacionais:
-- **`SOLICITACAO`**: Registro central das ocorrências urbanas.
-- **`TIPO_OCORRENCIA`**: Tipificação das demandas, secretaria responsável e SLA em dias.
-- **`HISTORICO_STATUS`**: Rastreabilidade e ciclo de vida de cada chamado (`Aberto`, `Em Atendimento`, `Concluído`).
-- **`CIDADAO`**: Dados do solicitante público.
-- **`FUNCIONARIO`**: Agente público responsável pelo atendimento do chamado.
-- **`USUARIO_SISTEMA`**: Credenciais e acessos do painel administrativo.
-- **`EVIDENCIA_FOTO`**: Anexos multimídia enviados pelos cidadãos para comprovação e triagem.
+O projeto é dividido em três camadas principais:
+
+1. **Frontend (Interface Web):** Páginas HTML5, CSS3 e JavaScript consumindo as APIs REST.
+2. **Backend Principal (Java / Spring Boot - Porta 8080):** Responsável pela autenticação, regras de negócio centrais e gerenciamento do fluxo de solicitações.
+3. **Microsserviço Analítico (Python / FastAPI - Porta 8000):** Responsável por processamento estatístico clássico (média, desvio padrão de SLA), geração de gráficos (histogramas) e projeções de Machine Learning para volume de demandas por bairro.
+4. **Banco de Dados:** Oracle Database.
 
 ---
 
-## 🎯 Módulos de Ciência de Dados & IA (Python 3.13)
+## 📋 Pré-requisitos e Requisitos da Aplicação
 
-1. **Fase 1 - Estatística Descritiva e SLA:**
-   - Cálculo de média de atendimento, variância e desvio padrão dos prazos de SLA por tipo de ocorrência.
-   - Cruzamento do impacto de evidências fotográficas (`EVIDENCIA_FOTO`) na resolução de chamados.
-   - Geração automática de histogramas de frequência e gráficos de dispersão por bairro (`Matplotlib` / `Seaborn`).
+Antes de iniciar a execução do projeto, certifique-se de ter instalado em sua máquina:
 
-2. **Fase 2 - Machine Learning Preditivo & Agrupamento:**
-   - **Predição de Quebra de SLA:** Classificador `Random Forest` (`Scikit-Learn`) para estimar a probabilidade de atraso de novas solicitações.
-   - **Clusterização Regional:** Algoritmo `K-Means` para agrupar bairros com perfil de problemas públicos e tempo de resposta similares.
-
-3. **Fase 3 - Processamento de Linguagem Natural (PLN):**
-   - Classificação textual supervisionada (`TF-IDF` + `Naive Bayes`) das descrições dos cidadãos para identificação automática da **Secretaria Responsável** e do **Grau de Urgência**.
+* **Java JDK 17** ou superior (para o Spring Boot).
+* **Python 3.10+** (para o microsserviço FastAPI).
+* **Oracle Database** (ativo localmente ou via container Docker).
+* **Gerenciador de Dependências Maven** (geralmente embutido no Spring).
+* **Gerenciador Pip** (para bibliotecas Python).
+* Extensão **Live Server** (VS Code) ou similar para rodar o frontend estático.
 
 ---
 
-## 🛠️ Tecnologias e Arquitetura
+## ⚙️ Configuração e Instalação
 
-- **Linguagem:** Python 3.13
-- **Manipulação de Dados:** Pandas, NumPy, SciPy
-- **Visualização:** Matplotlib, Seaborn
-- **Machine Learning & PLN:** Scikit-Learn
-- **Backend:** Java 17 (Spring Boot)
-- **Banco de Dados Relacional:** Oracle Database (`oracledb`)
-
----
+### 1. Clonando o Repositório
+```bash
+git clone [https://github.com/seu-usuario/hackgov.git](https://github.com/seu-usuario/hackgov.git)
+cd hackgov
