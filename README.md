@@ -35,5 +35,5 @@ Antes de iniciar a execução do projeto, certifique-se de ter instalado em sua 
 
 ### 1. Clonando o Repositório
 ```bash
-git clone [https://github.com/seu-usuario/hackgov.git](https://github.com/seu-usuario/hackgov.git)
+git clone [https://github.com/Peplui17/HackGov-Enterprise-Challenge.git](https://github.com/Peplui17/HackGov-Enterprise-Challenge.git)
 cd hackgov
