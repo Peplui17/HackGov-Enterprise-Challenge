@@ -54,18 +54,3 @@ O modelo relacional da aplicação é composto por 7 tabelas operacionais:
 - **Banco de Dados Relacional:** Oracle Database (`oracledb`)
 
 ---
-
-## 📂 Estrutura do Repositório
-
-```text
-HackGov/
-├── backend/            # API REST em Java Spring Boot
-├── database/           # DDL/DML das 7 tabelas no Oracle Database
-├── data-science/       # Módulo Python 3.13 (Estatística, ML e PLN)
-│   ├── database_config.py
-│   ├── stat_analysis.py
-│   ├── machine_learning.py
-│   ├── nlp_categorizer.py
-│   ├── main.py
-│   └── requirements.txt
-└── README.md
